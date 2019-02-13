@@ -22,6 +22,10 @@ const Transaction = props => {
         if(date === ''){
             setValidateDate(false);
         }
+
+        if(category === ''){
+            setValidateCategory(false)
+        }
         
     }
 
@@ -41,12 +45,12 @@ const Transaction = props => {
                </div>
            </div> 
            <div className="field">
-            <div className="select">
+            <div className={validateCategory? 'select is-primary': 'select is-danger'}>
                 <select onChange={e => setCategory(e.target.value)}>
                     <option>--Select Category--</option>
-                    <option value="groceries">Grocieries</option>
-                    <option value="Movies">Movies</option>
-                    <option value="travel">Travel</option>
+                    <option>Grocieries</option>
+                    <option>Movies</option>
+                    <option>Travel</option>
                 </select>
            </div>
            </div>
